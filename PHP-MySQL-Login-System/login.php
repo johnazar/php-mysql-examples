@@ -103,22 +103,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="wrapper">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return validate()">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <input type="text"id="username" name="username" class="form-control" value="<?php echo $username; ?>">
+                <span class="help-block" id="username_err"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" autocomplete="password">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="btn btn-primary" id="submitbtn" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
-    </div>    
+    </div>
+    <script>
+   
+    function validate(){
+        /* stop form from submitting normally */
+        //event.preventDefault();
+        let name=document.getElementById('username').value;
+        console.log("check after click");
+        console.log(name);
+        if(name == "")
+        {
+        document.getElementById('username_err').innerHTML = 'Please Fill Name';
+        console.log("stopped by JS");
+        return false;
+        }
+        return true;
+    }
+        
+    
+    </script>
 </body>
 </html>

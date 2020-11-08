@@ -66,4 +66,20 @@ class Job{
             return false;
         }
     }
+
+    //Delete Job
+    public function delete($id){
+        //insert query
+        $this->db->query("DELETE FROM jobs WHERE id= :id");
+        //Bind
+        $this->db->bind(':id', $id);
+
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }

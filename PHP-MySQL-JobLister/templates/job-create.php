@@ -38,7 +38,7 @@
         <lable>Contact Email</lable>
         <input type="email" class="form-control" name="contact_email">
     </div>
-    <input type="submit" class="btn btn-default" value="Submit" name="submit">
+    <input type="submit" class="btn btn-primary" value="Submit" name="submit">
 </form>
 
 

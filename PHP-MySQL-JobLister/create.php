@@ -7,12 +7,12 @@ if(isset($_POST['submit'])){
     $data = array();
     $data['job_title'] = htmlspecialchars($_POST['job_title']);
     $data['company'] = htmlspecialchars($_POST['company']);
-    $data['category'] = htmlspecialchars($_POST['category']);
+    $data['category_id'] = htmlspecialchars($_POST['category_id']);
     $data['description'] = htmlspecialchars($_POST['description']);
     $data['location'] = htmlspecialchars($_POST['location']);
     $data['salary'] = htmlspecialchars($_POST['salary']);
-    $data['user'] = htmlspecialchars($_POST['user']);
-    $data['email'] = htmlspecialchars($_POST['email']);
+    $data['contact_user'] = htmlspecialchars($_POST['contact_user']);
+    $data['contact_email'] = htmlspecialchars($_POST['contact_email']);
 
     if($job->create($data)){
         redirect('index.php', 'Your job has been listed', 'success');

@@ -7,7 +7,7 @@ $template = new Template('templates/frontpage.php');
 // Set variables
 $catrgory =isset($_GET['category'])?$_GET['category']:null;
 
-if($catrgory){
+if($catrgory!=0){
     $template->title = 'Latest Jobs from '. $job->getCategory($catrgory)->name;
     $template->jobs = $job->getByCategory($catrgory);
 

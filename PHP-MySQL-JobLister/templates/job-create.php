@@ -7,7 +7,7 @@
     </div>
     <div class="form-group">
         <lable>Category</lable>
-        <select class="form-control" name="category">
+        <select class="form-control" name="category_id">
         <option value="0">Choose category</option>
         <?php foreach ($categories as $category):?>
         <option value="<?php echo $category->id ?>"><?php echo $category->name ?></option>
@@ -32,11 +32,11 @@
     </div>
     <div class="form-group">
         <lable>Contact user</lable>
-        <input type="text" class="form-control" name="user">
+        <input type="text" class="form-control" name="contact_user">
     </div>
     <div class="form-group">
         <lable>Contact Email</lable>
-        <input type="email" class="form-control" name="email">
+        <input type="email" class="form-control" name="contact_email">
     </div>
     <input type="submit" class="btn btn-default" value="Submit" name="submit">
 </form>

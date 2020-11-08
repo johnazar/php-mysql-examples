@@ -14,6 +14,7 @@
       <input type="submit" class="btn btn-lg btn-success" value="Find">
   </form>
   </div>
+  <h3><?php echo $title;?></h3>
 <?php foreach($jobs as $job): ?>
 <div class="row marketing">
   <div class="col-md-10">

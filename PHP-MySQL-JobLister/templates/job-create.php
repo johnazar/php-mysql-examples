@@ -10,7 +10,7 @@
         <select class="form-control" name="category_id">
         <option value="0">Choose category</option>
         <?php foreach ($categories as $category):?>
-        <option value="<?php echo $category->id ?>"><?php echo $category->name ?></option>
+        <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
         <?php endforeach; ?>
         </select>
     </div>

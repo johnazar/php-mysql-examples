@@ -67,6 +67,29 @@ class Job{
         }
     }
 
+    //Update job
+    public function update($id, $data){
+        //insert query
+        $this->db->query("UPDATE jobs SET category_id=:category_id, job_title=:job_title, company=:company, 
+        description=:description, location=:location, salary=:salary, contact_user=:contact_user, contact_email=:contact_email WHERE id=:id");
+        //Bind
+        $this->db->bind(':category_id', $data['category_id']);
+        $this->db->bind(':job_title', $data['job_title']);
+        $this->db->bind(':company', $data['company']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':location', $data['location']);
+        $this->db->bind(':salary', $data['salary']);
+        $this->db->bind(':contact_user', $data['contact_user']);
+        $this->db->bind(':contact_email', $data['contact_email']);
+        $this->db->bind(':id', $id);
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     //Delete Job
     public function delete($id){
         //insert query

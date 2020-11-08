@@ -16,12 +16,12 @@ class Database{
         //set Option
         $option = array(
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_Exception
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
 
         //PDO instance
         try{
-            $this->dbh = new PDO($dsn,$this-user,$this->pass,$option);
+            $this->dbh = new PDO($dsn,$this->user,$this->pass,$option);
 
         }catch(PDOEXception $e){
             $this->error = $e->getMessage();

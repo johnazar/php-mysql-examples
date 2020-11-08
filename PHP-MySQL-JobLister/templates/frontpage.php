@@ -2,10 +2,10 @@
 
 
 <div class="jumbotron">
-  <h1 class="display-3">Jumbotron heading</h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-  <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-</div>
+  <h1 class="display-3">Find a job</h1>
+  <form>
+  </form>
+  </div>
 <?php foreach($jobs as $job): ?>
 <div class="row marketing">
   <div class="col-md-10">

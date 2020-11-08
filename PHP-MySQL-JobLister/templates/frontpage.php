@@ -3,7 +3,15 @@
 
 <div class="jumbotron">
   <h1 class="display-3">Find a job</h1>
-  <form>
+  <form method="GET" action="index.php">
+    <select name="category" class="form-control">
+      <option value="0">Choose category</option>
+      <?php foreach ($categories as $category):?>
+      <option value="<?php echo $category->id ?>"><?php echo $category->name ?></option>
+      <?php endforeach; ?>
+      </select>
+      <br>
+      <input type="submit" class="btn btn-lg btn-success" value="Find">
   </form>
   </div>
 <?php foreach($jobs as $job): ?>

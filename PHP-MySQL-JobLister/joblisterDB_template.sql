@@ -12,5 +12,6 @@ CREATE TABLE jobs (
     salary VARCHAR(255) NOT NULL,
     location VARCHAR(255) NOT NULL,
     contact_user VARCHAR(255) NOT NULL,
-    contact_email VARCHAR(255) NOT NULL
+    contact_email VARCHAR(255) NOT NULL,
+    post_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )COLLATE='utf8_general_ci';

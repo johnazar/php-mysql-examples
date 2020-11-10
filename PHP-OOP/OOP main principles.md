@@ -17,4 +17,8 @@
 -- public member can be accessed from anywhere in program.
 -- private member can only be accessed from within the same class that member is defind.
 -- private member can  be accessed from within the same class that member is defind, as well as any subclasses of that class.
+
 # Polymorphism
+- Describes a methods that are able to take on many froms.
+- Dynamic - at runtime.
+- Static - at compile-time (ex. when methods have the same name but defferint number of parameters)

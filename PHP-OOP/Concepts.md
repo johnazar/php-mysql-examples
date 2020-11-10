@@ -8,5 +8,7 @@
 - Prevents the program from ending up in any strange or unwanted states.
 
 # Abstraction
+- show esstinal details and keeping everything else hidden.
+- Determine specific points of contact that can act as an interface between classes, and only worry about the implementation when coding it.
 # Inheritance
 # Polymorphism

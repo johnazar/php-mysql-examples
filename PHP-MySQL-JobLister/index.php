@@ -14,13 +14,8 @@ if($catrgory!=0){
 }else{
     $template->title = 'Latest Jobs';
     $template->jobs = $job->getAllJobs();
-    
-
-}
-
+    }
 $template->categories = $job->getCategories();
-
-
 
 
 

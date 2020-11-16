@@ -1,5 +1,5 @@
 <?php class Template {
-    // path to template
+    //Path to template
     protected $template;
     //Vars Passed in
     protected $vars = array();

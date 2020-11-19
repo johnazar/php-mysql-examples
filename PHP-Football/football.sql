@@ -15,7 +15,7 @@ CREATE TABLE teams (
 
 CREATE TABLE players (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    playername VARCHAR(50) NOT NULL,
+    firstname VARCHAR(50) NOT NULL,
     lastname VARCHAR(50) NOT NULL,
     img VARCHAR(255) NOT NULL,
     team_id INT(50),

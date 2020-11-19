@@ -16,7 +16,6 @@
   </div>
 </div>
 
-<h3><?php echo $title;?></h3>
 <div class="container d-flex justify-content-around flex-wrap">
 <?php foreach($players as $player):?>
         <!-- Three columns of text below the carousel -->

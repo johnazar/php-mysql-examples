@@ -12,7 +12,7 @@ require_once 'helpers/system_helper.php';
     require_once 'lib/'.$class_name.'.php';    
 } */
 
-// Начиная с версии PHP 5.3.0 можно использовать анонимные функции
+// Starting PHP 5.3.0 we can use unknown function
 spl_autoload_register(function ($class_name) {
     include 'lib/' . $class_name . '.php';
 });

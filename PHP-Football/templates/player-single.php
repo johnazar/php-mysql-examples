@@ -1,7 +1,7 @@
 <?php include 'inc/header.php';?>
-<div class="container">
+<div class="container-md pt-5">
 <div class="col-md-4 align-self-center">
-              <div class="card mb-2" style="width: 18rem;">
+              <div class="card mb-2 pd-2" style="width: 18rem;">
                 <img class="card-img-top" src="<?php echo $player->img;?>" alt="Card image cap">
                 <div c  lass="card-body">
                   <h5 class="card-title"><?php echo $player->firstname .' '.$player->lastname ;?> </h5>

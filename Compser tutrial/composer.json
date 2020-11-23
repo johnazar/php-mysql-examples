@@ -1,0 +1,14 @@
+{
+    "name": "azar/tutrial",
+    "description": "just for testing",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John Azar",
+            "email": "eng.johnazar@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^8.15"
+    }
+}

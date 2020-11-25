@@ -12,13 +12,19 @@ CREATE TABLE teams (
     name VARCHAR(50) NOT NULL UNIQUE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE stat (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    speed INT(2) NOT NULL DEFAULT 50,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE players (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     firstname VARCHAR(50) NOT NULL,
     lastname VARCHAR(50) NOT NULL,
     img VARCHAR(255) NOT NULL,
-    team_id INT(50),
+    team_id INT(11),
+    stat_id INT(11),
     pos VARCHAR(50) NOT NULL,
     num VARCHAR(50) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -27,4 +33,6 @@ CREATE TABLE players (
 
 ALTER TABLE players
 ADD FOREIGN KEY (team_id) REFERENCES teams(id);
+ALTER TABLE players
+ADD FOREIGN KEY (stat_id) REFERENCES stat(id);
 

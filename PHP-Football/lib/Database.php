@@ -11,7 +11,7 @@ class Database{
 
     public function __construct(){
         //set DSN
-        $dsn ='mysql:hos='.$this->host.';dbname='.$this->dbname;
+        $dsn ='mysql:host='.$this->host.';dbname='.$this->dbname.';charset=utf8';
 
         //set Option
         $option = array(

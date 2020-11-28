@@ -37,4 +37,4 @@
     </nav>
     </header>
     <main role="main">
-<?php displayMessage(); ?>
+

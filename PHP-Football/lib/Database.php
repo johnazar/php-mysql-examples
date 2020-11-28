@@ -22,6 +22,10 @@ class Database{
         //PDO instance
         try{
             $this->dbh = new PDO($dsn,$this->user,$this->pass,$option);
+            // set defauld mode to fetch data
+            //$this->dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+            // disable emulation to limit the result
+            //$this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES,FALSE);
 
         }catch(PDOEXception $e){
             $this->error = $e->getMessage();

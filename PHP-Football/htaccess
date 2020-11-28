@@ -1,0 +1,2 @@
+ErrorDocument 404 http://football.johnazar.com/404.html
+ErrorDocument 500 http://football.johnazar.com/404.html

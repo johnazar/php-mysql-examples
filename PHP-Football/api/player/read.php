@@ -24,8 +24,8 @@ foreach($players as $player){
 
 }
 
-
+//var_dump($result_arr['data']);
 // Turn $result_arr into json
-echo json_encode($result_arr);
+echo json_encode($result_arr, JSON_UNESCAPED_UNICODE);
 
 // outpot

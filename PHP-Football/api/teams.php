@@ -1,7 +1,7 @@
 <?php
 //headers
 header('Access-Control-Allow-Origin: *');
-header('Contont-Type: application/json');
+header('Content-Type: application/json');
 include '../config/init.php';
 
 // Instantiate api object

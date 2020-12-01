@@ -2,9 +2,9 @@
 //headers
 header('Access-Control-Allow-Origin: *');
 header('Contont-Type: application/json');
-include '../../config/init.php';
+include '../config/init.php';
 
-// Instantiate player object
+// Instantiate api object
 $player =new PublicApi;
 
 // Player query

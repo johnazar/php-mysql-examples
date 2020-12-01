@@ -1,3 +1,6 @@
+<?php
+die($_GET['q']);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <!-- CSS -->

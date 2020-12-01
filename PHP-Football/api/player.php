@@ -1,7 +1,7 @@
 <?php
 //headers
 header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 include '../config/init.php';
 
 $player_id = isset($_GET['id'])?$_GET['id']:die();

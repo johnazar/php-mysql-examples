@@ -1,7 +1,7 @@
 <?php
 //headers
 header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Method: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Method,Contont-Type,Access-Control-Allow-Method,Authorization, X-Requested-With');
 include '../config/init.php';

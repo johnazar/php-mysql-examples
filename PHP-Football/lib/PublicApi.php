@@ -106,6 +106,21 @@ class PublicApi{
             return false;
         }
     }
+    //Delete player
+    public function delete($id){
+        //insert query
+        $this->db->query("DELETE FROM players WHERE id= :id");
+        //Bind
+        $this->db->bind(':id', $id);
+
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
 
 }

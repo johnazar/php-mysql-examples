@@ -1,7 +1,9 @@
 <?php
 //headers
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Method: *');
 header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Headers: Access-Control-Allow-Origin,Access-Control-Allow-Method,Contont-Type');
 include '../config/init.php';
 //die($_GET['q']);
 
@@ -125,9 +127,31 @@ switch ($method) {
             }else{
                 $result_arr['data'] = ["message"=>"Player has not been updated"];
             }
+            $result_arr['data'] = ["message"=>"Player has not been updated"];
 
         }
         break;
+    case 'DELETE':
+        if($type=='players'){
+            if(isset($player_id)){
+                if($player_obj->delete($player_id)){
+                    http_response_code(200);
+                    $result_arr['status'] = [
+                    "status"=>true,
+                    "message"=>"Player has been deleted"];
+                    $result_arr['data'] = ["message"=>"Player ID ".$player_id." has been deleted"];
+
+                }
+
+            }
+            //$result_arr['data'] = ["message"=>"Player has not been deleted"];
+        }else{
+            $result_arr['data'] = ["message"=>"Player has not been deleted"];
+
+        }
+
+        break;
+
 
     default:
         # code...

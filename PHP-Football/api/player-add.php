@@ -3,7 +3,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Method: POST');
-header('Access-Control-Allow-Headers: Access-Control-Allow-Method,Contont-Type,Access-Control-Allow-Method,Authorization, X-Requested-With');
+header('Access-Control-Allow-Headers: Access-Control-Allow-Origin,Contont-Type,Access-Control-Allow-Method,Authorization, X-Requested-With');
 include '../config/init.php';
 
 // this returns null if not valid json

@@ -34,7 +34,7 @@ switch ($method) {
                     array_push($result_arr['data'], $player);
                 }else{
                     http_response_code(404);
-                    $result_arr['data'] = [
+                    $result_arr['status'] = [
                         "status"=>false,
                         "message"=>"No data was found"];
                 }
@@ -58,31 +58,52 @@ switch ($method) {
             }
             
         }else{
+            http_response_code(404);
+            $result_arr['status'] = [
+                "status"=>false,
+                "message"=>"No data was found"];
             $result_arr['data'] = ["message"=>"No data was found"];
             
         }
         break;
     case 'POST':
-        # code...
+        // this returns null if not valid json
+        $recived_data = json_decode(file_get_contents("php://input"));
+        //var_dump($recived_data);
+        //$recived_data = $_POST;
+        $data=array();
+        $data['first_name'] = htmlspecialchars(strip_tags($recived_data->first_name));
+        $data['last_name'] = htmlspecialchars(strip_tags($recived_data->last_name));
+        $data['team_id'] = htmlspecialchars(strip_tags((int)$recived_data->team_id));
+        $data['speed'] = htmlspecialchars(strip_tags((int)$recived_data->speed));
+        $data['position'] = htmlspecialchars(strip_tags((int)$recived_data->position));
+        $data['number'] = htmlspecialchars(strip_tags((int)$recived_data->number));
+        $data['img'] = '../public/img/uploads/placeholder.jpg';
+        //var_dump($data);
+        //die();
+
+        $latest_id =$player_obj->create($data);
+        
+        if(isset($latest_id)){
+                       
+            http_response_code(201);
+            $result_arr['status'] = [
+                "status"=>true,
+                "message"=>"Player has been added"];
+            $result_arr['data'] = ["message"=>"Player ID".$latest_id." has been added"];
+            
+
+        }else{
+            $result_arr['data'] = ["message"=>"Player has not been added"];
+            
+
+        }
         break;
 
     default:
         # code...
         break;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

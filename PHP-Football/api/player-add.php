@@ -6,13 +6,6 @@ header('Access-Control-Allow-Method: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Method,Contont-Type,Access-Control-Allow-Method,Authorization, X-Requested-With');
 include '../config/init.php';
 
-
-
-
-
-
-
-
 // this returns null if not valid json
 $recived_data = json_decode(file_get_contents("php://input"));
 

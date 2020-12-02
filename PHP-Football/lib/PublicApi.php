@@ -73,7 +73,8 @@ class PublicApi{
             $this->db->bind(':num', $data['number']);
             //Execute Player
             if($this->db->execute()){
-                return true;
+                $latest_id = $this->db->lastInsertId();
+                return $latest_id;
             }else{
                 return false;
             }

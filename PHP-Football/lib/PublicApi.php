@@ -82,6 +82,30 @@ class PublicApi{
         
         
     }
+    //Update player
+    public function update($id, $data){
+        //print_r($data['number']);
+        //insert query
+        //var_dump($data);
+        //var_dump($id);
+        //die();
+        $this->db->query("UPDATE players INNER JOIN stat ON players.stat_id = stat.id SET players.team_id=:team_id, players.firstname=:firstname, players.lastname=:lastname,players.img=:img, players.pos=:pos, players.num=:num, stat.speed=:speed WHERE players.id=:id");
+         //Bind
+        $this->db->bind(':id', $id);
+        $this->db->bind(':team_id', $data['team_id']);
+        $this->db->bind(':firstname', $data['first_name']);
+        $this->db->bind(':lastname', $data['last_name']);
+        $this->db->bind(':img', $data['img']);
+        $this->db->bind(':pos', $data['position']);
+        $this->db->bind(':num', $data['number']);
+        $this->db->bind(':speed', $data['speed']);
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
 }

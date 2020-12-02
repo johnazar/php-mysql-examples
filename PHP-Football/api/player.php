@@ -10,7 +10,7 @@ $player_id = isset($_GET['id'])?$_GET['id']:die();
 $player_obj =new PublicApi;
 
 // Player query
-$player = $player_obj->getPlayer($player_id );
+$player = $player_obj->getPlayer($player_id);
 if($player == true){
     // Return array = player and other info
     $result_arr = array();

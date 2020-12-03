@@ -1,3 +1,5 @@
+/apiv1
+/apiv2
 /config/psl-config.php
-/dashboard
+
 .env

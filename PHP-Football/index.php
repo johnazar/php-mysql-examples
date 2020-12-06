@@ -15,11 +15,22 @@ if($team!=0){
     $template->title = 'Latest Players';
     $template->players = $player->getAllPlayers();
 }
+
+
+if (isset($_POST['searchq'])) {
+    $template->players = $player->findPlayer($_POST['searchq']);
+    if($template->players>0){
+        $template->title = 'Search Results for'. $_POST['searchq'];
+
+    }else{
+        $template->title = 'No results found';
+    }
+    
+    
+  }
+
+
+// retrive teams
 $template->teams = $player->getTeams();
-
-
-
-
-
 //display template
 echo $template;

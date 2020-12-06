@@ -2,17 +2,33 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Find a Player</h1>
-    <form method="GET" action="index.php">
-    <select name="team" class="form-control">
-      <option value="0">Choose team</option>
-      <?php foreach ($teams as $team):?>
-      <option value="<?php echo $team->id ?>"><?php echo $team->name ?></option>
-      <?php endforeach; ?>
-      </select>
-      <br>
-      <input type="submit" class="btn btn-lg btn-success" value="Find">
-  </form>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- [By Team] -->
+      <h1 class="display-4">Find by team</h1>
+      <form method="GET" action="index.php" class="form-inline">
+
+        <select name="team"  class="form-control col-md-8 mr-sm-2">
+        <option value="0">Choose team</option>
+        <?php foreach ($teams as $team):?>
+        <option value="<?php echo $team->id ?>"><?php echo $team->name ?></option>
+        <?php endforeach; ?>
+        </select>
+        <input type="submit" class="btn btn-success" value="Display">
+
+      </form>
+    </div>
+    <div class="col-md-6">
+      <!-- [SEARCH FORM] -->
+      <h1 class="display-4">Find a Player</h1>
+      <form method="POST" action="index.php" class="form-inline">
+
+        <input type="text" name="searchq"  class="form-control col-md-8 mr-sm-2" required/>
+        <input type="submit" class="btn btn-success" value="Find"/>
+
+      </form>
+      </div>
+    </div>
   </div>
 </div>
 

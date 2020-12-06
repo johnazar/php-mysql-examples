@@ -5,5 +5,5 @@ a collection of mini project focused on implementation typical needs for web dev
 * Activate by email (TODO)
 * Rest password (TODO)
 * CRUD
-* Search (TODO)
+* Search & autocomplete (TODO)
 * API (2 versions)

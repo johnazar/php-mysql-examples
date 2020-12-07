@@ -1,4 +1,6 @@
-<?php class Template {
+<?php 
+namespace lib;
+class Template {
     //Path to template
     protected $template;
     //Vars Passed in

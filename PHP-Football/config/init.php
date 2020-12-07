@@ -14,7 +14,10 @@ require $_SERVER['DOCUMENT_ROOT'].'/helpers/system_helper.php';
 
 // Starting PHP 5.3.0 we can use unknown function
 spl_autoload_register(function ($class_name) {
-    include $_SERVER['DOCUMENT_ROOT'].'/lib/' . $class_name . '.php';
+    $class_name=str_replace('\\','/',$class_name);
+    //var_dump($class_name);
+    //die();
+    include $_SERVER['DOCUMENT_ROOT'] .'/'. $class_name . '.php';
 });
 
 //echo "init";

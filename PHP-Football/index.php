@@ -1,5 +1,7 @@
 <?php include_once 'config/init.php'; ?>
 <?php
+use lib\Player as Player;
+use lib\Template as Template;
 $player =new Player;
 //create template
 $template = new Template('templates/frontpage.php');

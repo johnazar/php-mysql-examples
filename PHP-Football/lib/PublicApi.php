@@ -1,4 +1,5 @@
 <?php
+namespace lib;
 class PublicApi{
     private $db;
     public function __construct(){

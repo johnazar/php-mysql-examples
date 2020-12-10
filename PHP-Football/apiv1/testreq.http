@@ -1,0 +1,17 @@
+GET http://football.safarov-el.ru/API1/players.php HTTP/1.1
+###
+GET http://football.safarov-el.ru/API1/player.php?id=5 HTTP/1.1
+###
+POST http://football.safarov-el.ru/API1/player-add.php HTTP/1.1
+content-type: application/json
+
+{
+    "firstname": "Elnur",
+    "lastname": "sample",
+    "team_id": 1,
+    "speed": 5,
+    "pos": 1,
+    "num": 1,
+    
+}
+

@@ -1,0 +1,30 @@
+GET https://football.johnazar.com/apiv2/players HTTP/1.1
+
+###
+POST https://football.johnazar.com/apiv2/players/ HTTP/1.1
+content-type: application/json
+
+{
+    "first_name": "Elnur",
+    "last_name": "sample",
+    "team_id": "1",
+    "speed": "1",
+    "position": "1",
+    "number": "1",
+    "img": "../public/img/uploads/placeholder.jpg"
+}
+###
+PATCH  https://football.johnazar.com/apiv2/players/ HTTP/1.1
+
+{
+    "id":"55",
+    "first_name": "Elnur",
+    "last_name": "Safarov",
+    "team_id": "1",
+    "speed": "1",
+    "position": "1",
+    "number": "1",
+    "img": "../public/img/uploads/placeholder.jpg"
+}
+###
+DELETE   https://football.johnazar.com/apiv2/players/2 HTTP/1.1

@@ -2,7 +2,7 @@
 //headers
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=utf-8');
-include '../config/init.php';
+include '../../config/init.php';
 use lib\PublicApi as PublicApi;
 
 $player_id = isset($_GET['id'])?$_GET['id']:die();

@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Method: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Origin,Contont-Type,Access-Control-Allow-Method,Authorization, X-Requested-With');
-include '../config/init.php';
+include '../../config/init.php';
 use lib\PublicApi as PublicApi;
 // this returns null if not valid json
 $recived_data = json_decode(file_get_contents("php://input")); //  PATCH DELETE  $_REQUEST

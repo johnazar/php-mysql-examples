@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Method: *');
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Origin,Access-Control-Allow-Method,Contont-Type');
-include '../config/init.php';
+include '../../config/init.php';
 //die($_GET['q']);
 use lib\PublicApi as PublicApi;
 

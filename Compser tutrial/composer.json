@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-        "illuminate/support": "^8.15"
+        "illuminate/support": "^8.15",
+        "monolog/monolog": "^2.1"
     }
 }

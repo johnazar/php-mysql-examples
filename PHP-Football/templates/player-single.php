@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include_once 'inc/header.php';?>
 <div class="container-md pt-5">
 <div class="col-md-4 align-self-center">
               <div class="card mb-2 pd-2" style="width: 18rem;">
@@ -19,4 +19,4 @@
           </div><!-- /.col-md-4 -->
 
 </div> <!-- /container -->
-<?php include 'inc/footer.php';?>
+<?php include_once 'inc/footer.php';?>

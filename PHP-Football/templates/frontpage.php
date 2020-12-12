@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include_once 'inc/header.php';?>
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -56,4 +56,4 @@
   <?php endforeach;?>
                          
   </div> <!-- /container -->
-<?php include 'inc/footer.php';?>
+<?php include_once 'inc/footer.php';?>

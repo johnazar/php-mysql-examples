@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include_once 'inc/header.php';?>
 <div class="container">
 <h2 class="page-header">Add Player</h2>
 <form method="POST" action="create.php" enctype="multipart/form-data">
@@ -45,4 +45,4 @@
 
 
 
-<?php include 'inc/footer.php';?>
+<?php include_once 'inc/footer.php';?>

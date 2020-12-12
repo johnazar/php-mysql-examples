@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include_once 'inc/header.php';?>
 <div class="container">
 <h2 class="page-header">Update Player</h2>
 <form method="POST" action="update.php?id=<?php echo $player->id;?>" enctype="multipart/form-data">
@@ -44,4 +44,4 @@
 <script src="./../../dashboard/public/js/football.js"> </script>
 
 
-<?php include 'inc/footer.php';?>
+<?php include_once 'inc/footer.php';?>

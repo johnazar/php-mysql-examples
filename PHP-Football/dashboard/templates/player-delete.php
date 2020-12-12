@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include_once 'inc/header.php';?>
 <div class="container d-flex justify-content-around flex-wrap">
     <form calss="well" method="POST" action="delete.php">
         <div class="form-group">
@@ -12,5 +12,5 @@
     </form>
 </div>
 
-<?php include 'inc/footer.php';?>
+<?php include_once 'inc/footer.php';?>
 

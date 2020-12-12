@@ -1,4 +1,4 @@
-<?php include 'inc/header.php';?>
+<?php include_once 'inc/header.php';?>
 <div class="container-md pt-5">
   <div class="card mb-2 pd-2" style="width: 18rem;">
     <img class="card-img-top" src="<?php echo $player->img;?>" alt="Card image cap">
@@ -20,4 +20,4 @@
 </div> <!-- /container -->
 <br>
 <br>
-<?php include 'inc/footer.php';?>
+<?php include_once 'inc/footer.php';?>

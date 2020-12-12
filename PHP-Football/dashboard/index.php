@@ -1,5 +1,5 @@
 <?php include_once 'config/init.php'; ?>
-<?php include_once 'config/auth.php'; ?>
+<?php require_once 'config/auth.php'; ?>
 <?php
 $player =new Player;
 //create template

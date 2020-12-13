@@ -1,6 +1,7 @@
 {
-    "name": "johnazar/mvcdemo",
-    "description": "MVC demo",
+    "name": "azar.j/php-mvc",
+    "description": "mvc demo",
+    "license": "MIT",
     "authors": [
         {
             "name": "John Azar",
@@ -10,7 +11,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "app\\": "./"
+            "app\\":"./app"
         }
     }
 }

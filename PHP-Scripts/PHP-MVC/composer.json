@@ -1,5 +1,6 @@
 {
     "name": "johnazar/mvcdemo",
+    "description": "MVC demo",
     "authors": [
         {
             "name": "John Azar",

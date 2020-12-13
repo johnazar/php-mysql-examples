@@ -1,5 +1,5 @@
 <?php
-require "./app/Player.php";
+require "vendor/autoload.php";
 use app\Player as Player;
 $player = new Player();
-echo $player;
+//var_dump($player);

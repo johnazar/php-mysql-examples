@@ -1,5 +1,6 @@
 <?php
 namespace app;
+
 class Router
 {
     public array $getRoutes = [];
@@ -44,12 +45,12 @@ class Router
             echo 'Page not found';
             exit;
         }
-         echo '<pre>';
+        /* echo '<pre>';
         var_dump($fn);
         echo '<pre>'; 
-
+ */
         // run function
-        call_user_func($fn);
+        echo call_user_func($fn, $this);
         
     }
 
@@ -58,9 +59,9 @@ class Router
         foreach ($params as $key => $value) {
             $$key = $value;
         }
-        ob_start();
+        ob_start(); // start clollect output
         include __DIR__."/views/$view.php";
-        $content = ob_get_clean();
+        $content = ob_get_clean(); // save output to $content to use next
         include __DIR__."/views/_layout.php";
     }
 }

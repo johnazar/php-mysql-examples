@@ -7,7 +7,7 @@ class Database{
     private $pass = DB_PASS;
     private $dbname = DB_NAME;
 
-    private $dbh; // database handler mysqli
+    private $dbh; // database handler 
     private $error;
     private $stmt;
 

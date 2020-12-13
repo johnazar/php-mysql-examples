@@ -1,78 +1,98 @@
 <?php
+
+
 namespace app;
+
+use app\models\Player;
 use PDO;
-class Database{
+define('DB_HOST', 'localhost');
+define('DB_USER', 'u0365877_footbal');
+define('DB_PASS', '7Q0z7X4v');
+define('DB_NAME', 'u0365877_football');
+
+
+class Database
+{
+
     private $host = DB_HOST;
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $dbname = DB_NAME;
 
-    private $dbh; // database handler mysqli
-    private $error;
-    private $stmt;
+    public $pdo = null;
+    public static ?Database $db = null;
 
-    public function __construct(){
+    public function __construct()
+    {
         //set DSN
         $dsn ='mysql:host='.$this->host.';dbname='.$this->dbname.';charset=utf8';
-
         //set Option
         $option = array(
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_EMULATE_PREPARES=> false // to use limit
         );
 
-        //PDO instance
-        try{
-            $this->dbh = new PDO($dsn,$this->user,$this->pass,$option);
-
-        }catch(PDOEXception $e){
-            $this->error = $e->getMessage();
-
-        }
+        $this->pdo = new PDO($dsn,$this->user,$this->pass,$option);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        self::$db = $this;
     }
 
-    public function query($query)
+    public function getProducts($keyword = '')
     {
-        $this->stmt = $this->dbh->prepare($query);
-    }
-
-    public function bind($param,$value, $type =null)
-    {
-        if(is_null($type)){
-            switch (true){
-                case is_int ( $value):
-                    $type = PDO::PARAM_INT;
-                    break;
-                case is_bool ( $value):
-                    $type = PDO::PARAM_BOOL;
-                    break;
-                case is_null ( $value):
-                    $type = PDO::PARAM_NULL;
-                    break;
-                default:
-                    $type = PDO::PARAM_STR;
-            }
+        if ($keyword) {
+            $statement = $this->pdo->prepare('SELECT players.* , teams.name AS tname FROM players INNER JOIN teams ON players.team_id = teams.id LIKE :keyword ORDER BY created_at DESC');
+            $statement->bindValue(":keyword", "%$keyword%");
+        } else {
+            $statement = $this->pdo->prepare('SELECT players.* , teams.name AS tname FROM players INNER JOIN teams ON players.team_id = teams.id ORDER BY created_at DESC ');
         }
-        $this->stmt->bindValue($param,$value,$type);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function execute(){
-        return $this->stmt->execute();
-    }
-    //FetchALL
-    public function resultSet(){
-        $this->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
-    }
-    //Fetch one
-    public function single(){
-        $this->execute();
-        return $this->stmt->fetch(PDO::FETCH_OBJ);
-    }
-    public function lastInsertId(){
-        return $this->dbh->lastInsertId();
+    public function getProductById($id)
+    {
+        $statement = $this->pdo->prepare('SELECT * FROM products WHERE id = :id');
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function deleteProduct($id)
+    {
+        $statement = $this->pdo->prepare('DELETE FROM products WHERE id = :id');
+        $statement->bindValue(':id', $id);
 
+        return $statement->execute();
+    }
 
+    public function updateProduct(Product $product)
+    {
+        $statement = $this->pdo->prepare("UPDATE products SET title = :title, 
+                                        image = :image, 
+                                        description = :description, 
+                                        price = :price WHERE id = :id");
+        $statement->bindValue(':title', $product->title);
+        $statement->bindValue(':image', $product->imagePath);
+        $statement->bindValue(':description', $product->description);
+        $statement->bindValue(':price', $product->price);
+        $statement->bindValue(':id', $product->id);
+
+        $statement->execute();
+    }
+
+    public function createProduct(Product $product)
+    {
+        $statement = $this->pdo->prepare("INSERT INTO products (title, image, description, price, create_date)
+                VALUES (:title, :image, :description, :price, :date)");
+        $statement->bindValue(':title', $product->title);
+        $statement->bindValue(':image', $product->imagePath);
+        $statement->bindValue(':description', $product->description);
+        $statement->bindValue(':price', $product->price);
+        $statement->bindValue(':date', date('Y-m-d H:i:s'));
+
+        $statement->execute();
+    }
 }

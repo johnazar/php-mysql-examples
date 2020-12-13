@@ -1,0 +1,15 @@
+{
+    "name": "johnazar/mvcdemo",
+    "authors": [
+        {
+            "name": "John Azar",
+            "email": "eng.johnazar@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    }
+}

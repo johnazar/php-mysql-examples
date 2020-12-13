@@ -45,6 +45,17 @@ class Player{
         return $row;
 
     }
+    public function findPlayer($searchq){
+        $this->db->query("SELECT players.* , teams.name AS tname FROM players 
+        INNER JOIN teams ON players.team_id = teams.id
+        WHERE firstname LIKE :searchq
+        OR lastname LIKE :searchq
+        ORDER BY created_at DESC");
+        $this->db->bind(':searchq', '%'.$searchq.'%');
+        $results = $this->db->resultSet();
+        return $results;
+
+    }
 
 /*     public function create($data){
         //insert query

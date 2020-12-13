@@ -1,6 +1,8 @@
 <?php include_once 'config/init.php'; ?>
 <?php require_once 'config/auth.php'; ?>
 <?php
+/* use lib\Player as Player;
+use lib\Template as Template; */
 $player =new Player;
 //create template
 $template = new Template('templates/dashboard.php');
@@ -16,11 +18,24 @@ if($team!=0){
     $template->title = 'Latest Players';
     $template->players = $player->getAllPlayers();
 }
+
+if (isset($_POST['searchq'])) {
+    $searchq = preg_replace("#[^0-9a-z]#","",$searchq);
+    var_dump($searchq);
+    exit;
+    $template->players = $player->findPlayer($searchq);
+    if($template->players>0){
+        $template->title = 'Search Results for'. $_POST['searchq'];
+
+    }else{
+        $template->title = 'No results found';
+    }
+    
+    
+  }
+
+
+
 $template->teams = $player->getTeams();
-
-
-
-
-
 //display template
 echo $template;

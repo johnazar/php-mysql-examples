@@ -16,6 +16,8 @@ if(isset($_POST['submit'])){
     $data['position'] = htmlspecialchars($_POST['position']);
     $data['number'] = htmlspecialchars($_POST['number']);
     $data['img'] = htmlspecialchars($_POST['currimg']);
+    // to remove old image
+    $currimg = htmlspecialchars($_POST['currimg']);
 
     if($_FILES['img']['size']>0){
         $file = $_FILES['img']; // get info about the file
@@ -36,6 +38,7 @@ if(isset($_POST['submit'])){
                     $fileDestination = '../public/img/uploads/'. $fileNameNew;
                     move_uploaded_file($fileTmpName,$fileDestination);
                     $data['img'] = $fileDestination;
+                    unlink($currimg);
                     //header("Location: index.php?sucess");
                 } else {
                     echo "The file is too big";

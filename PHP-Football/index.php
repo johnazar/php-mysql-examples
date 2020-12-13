@@ -20,9 +20,11 @@ if($team!=0){
 
 
 if (isset($_POST['searchq'])) {
-    $template->players = $player->findPlayer($_POST['searchq']);
+    //filter inputs
+    $searchq = preg_replace("#[^0-9a-zA-Z]#","",$_POST['searchq']);
+    $template->players = $player->findPlayer($searchq);
     if($template->players>0){
-        $template->title = 'Search Results for'. $_POST['searchq'];
+        $template->title = 'Search Results for: '. $_POST['searchq'];
 
     }else{
         $template->title = 'No results found';

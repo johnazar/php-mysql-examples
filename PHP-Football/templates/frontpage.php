@@ -22,10 +22,8 @@
       <!-- [SEARCH FORM] -->
       <h1 class="display-4">Find a Player</h1>
       <form method="POST" action="index.php" class="form-inline">
-
         <input type="text" name="searchq"  class="form-control col-md-8 mr-sm-2" required/>
         <input type="submit" class="btn btn-success" value="Find"/>
-
       </form>
       </div>
     </div>

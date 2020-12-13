@@ -14,6 +14,7 @@
 </div>
 
 <div class="container d-flex justify-content-around flex-wrap">
+<h2><?php echo $title; ?></h2>
   <table class='table table-bordered table-striped'>
     <thead>
       <tr>

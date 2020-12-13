@@ -48,10 +48,11 @@ class Player{
     public function findPlayer($searchq){
         $this->db->query("SELECT players.* , teams.name AS tname FROM players 
         INNER JOIN teams ON players.team_id = teams.id
-        WHERE firstname LIKE :searchq
-        OR lastname LIKE :searchq
+        WHERE firstname LIKE :search1 OR lastname LIKE :search2
         ORDER BY created_at DESC");
-        $this->db->bind(':searchq', '%'.$searchq.'%');
+        // we need tow binds
+        $this->db->bind(':search1', "%".$searchq."%",PDO::PARAM_STR);
+        $this->db->bind(':search2', "%".$searchq."%",PDO::PARAM_STR);    
         $results = $this->db->resultSet();
         return $results;
 

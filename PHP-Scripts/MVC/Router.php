@@ -6,12 +6,14 @@ class Router
     public array $getRoutes = [];
     public array $postRoutes = [];
 
-/*     public ?Database $database = null;
-
-    public function __construct(Database $database)
+    public Database $database; // ? is for nullabe type
+    
+    
+    public function __construct()
     {
-        $this->database = $database;
-    } */
+        
+        $this->database = new Database();
+    }
 
     public function get($url, $fn)
     {
@@ -59,7 +61,9 @@ class Router
         foreach ($params as $key => $value) {
             $$key = $value;
         }
+ 
         ob_start(); // start clollect output
+        
         include __DIR__."/views/$view.php";
         $content = ob_get_clean(); // save output to $content to use next
         include __DIR__."/views/_layout.php";

@@ -1,6 +1,9 @@
 GET https://football.johnazar.com/apiv2/players HTTP/1.1
 
 ###
+GET http://football.safarov-el.ru/API/v2/players HTTP/1.1
+
+###
 POST https://football.johnazar.com/apiv2/players/ HTTP/1.1
 content-type: application/json
 

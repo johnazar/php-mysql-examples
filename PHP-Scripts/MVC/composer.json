@@ -1,0 +1,17 @@
+{
+    "name": "azar.j/mvc",
+    "description": "mvc demo",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John Azar",
+            "email": "eng.johnazar@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\":"./"
+        }
+    }
+}
